@@ -6,16 +6,17 @@ finds rocks in an image and shows their locations by putting a box around it. If
 there are multiple rocks in a box, there will be multiple boxes as well. 
 
 Each imgData structure represents a location of one of these boxes.
-imgData.msg: 
-  int32 x :		the x coordinate of the top left corner of the box
-  int32 y : 		the y coordinate of the top left corner of the box
-  int32 width : 	the width of the box
-  int32 height : 	the height of the box
-  colorRGBA color:  	the color of the rock 
-  string cameraID : 	the name of the camera where the rock was detected 
+
+imgData.msg:
+    int32 x :		the x coordinate of the top left corner of the box
+    int32 y : 		the y coordinate of the top left corner of the box
+    int32 width : 	the width of the box
+    int32 height : 	the height of the box
+    colorRGBA color:  	the color of the rock 
+    string cameraID : 	the name of the camera where the rock was detected 
 
 imgDataArray.msg:
-  imgData[] rockData :	array containing all the imgData's that have all the rock locations
+    imgData[] rockData :array containing all the imgData's that have all the rock locations
 
 How to Run rock_publisher:
   1. Untar the file into a ROS workspace. It will create a package called rock_publisher.
