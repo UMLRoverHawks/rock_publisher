@@ -1,26 +1,17 @@
 rock_publisher
 ==============
 
-msg that describes how detections will be sent to the UI
-
-there's a bunch of crap that eric said he didn't want in here, sorry, 
-i'll fix it later, i don't really understand what i am doing
-  - adam
-
-
-also here's alan's readme, because he was the one who actually wrote this stuff:
-
 The rock_publisher package works in concordance with a rock detection program that 
 finds rocks in an image and shows their locations by putting a box around it. If 
 there are multiple rocks in a box, there will be multiple boxes as well. 
 
 Each imgData structure represents a location of one of these boxes.
 imgData.msg: 
-  int32 x :		the x coordinate of the top left corner of the box 
-  int32 y : 		the y coordinate of the top left corner of the box 
-  int32 width : 	the width of the box 
-  int32 height : 	the height of the box 
-  colorRGBA :  		the color of the rock 
+  int32 x :		the x coordinate of the top left corner of the box
+  int32 y : 		the y coordinate of the top left corner of the box
+  int32 width : 	the width of the box
+  int32 height : 	the height of the box
+  colorRGBA color:  	the color of the rock 
   string cameraID : 	the name of the camera where the rock was detected 
 
 imgDataArray.msg:
