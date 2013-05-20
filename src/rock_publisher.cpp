@@ -5,7 +5,7 @@
 #include <sstream>
 
 /**
- * This tutorial demonstrates simple sending of imgData msg over the ROS system.
+ * This tutorial demonstrates simple sending of imgData msgs over the ROS system.
  */
 int main(int argc, char **argv)
 {
@@ -27,7 +27,11 @@ int main(int argc, char **argv)
     rockData.y = count + 1 ;
     rockData.width = count + 2 ;
     rockData.height = count + 3 ;
-    rockData.color = "red" ;
+    rockData.color.r = 0 ;
+    rockData.color.g = 0 ;
+    rockData.color.b = 0 ;
+    rockData.color.a = 0 ;
+    rockData.cameraID = "camera0" ;
     rocksMsg.rockData.push_back(rockData) ;
 
     pub.publish(rocksMsg) ;

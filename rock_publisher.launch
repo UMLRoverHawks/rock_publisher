@@ -1,0 +1,7 @@
+<launch>
+  <node name="subscriber" pkg="rock_publisher" type="rock_subscriber_instance" output="screen"/>	
+  <node name="publisher0" pkg="rock_publisher" type="rock_publisher_instance" args="camera0"/>
+  <node name="publisher1" pkg="rock_publisher" type="rock_publisher_instance" args="camera1"/>
+  <node name="publisher2" pkg="rock_publisher" type="rock_publisher_instance" args="camera2"/>
+  <node name="publisher3" pkg="rock_publisher" type="rock_publisher_instance" args="camera3"/>
+</launch> 

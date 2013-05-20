@@ -31,3 +31,6 @@ rosbuild_genmsg()
 
 rosbuild_add_executable(rock_publisher src/rock_publisher.cpp)
 rosbuild_add_executable(rock_subscriber src/rock_subscriber.cpp)
+
+rosbuild_add_executable(rock_publisher_instance src/rock_publisher_instance.cpp)
+rosbuild_add_executable(rock_subscriber_instance src/rock_subscriber_instance.cpp)

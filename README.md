@@ -10,6 +10,21 @@ i'll fix it later, i don't really understand what i am doing
 
 also here's alan's readme, because he was the one who actually wrote this stuff:
 
+The rock_publisher package works in concordance with a rock detection program that
+finds rocks in an image and shows their locations by putting a box around it. If
+there are multiple rocks in a box, there will be multiple boxes as well.
+
+Each imgData structure represents a location of one of these boxes.
+imgData.msg:
+int32 x :		the x coordinate of the top left corner of the box 
+int32 y : 		the y coordinate of the top left corner of the box 
+int32 width : 		the width of the box 
+int32 height : 		the height of the box
+colorRGBA :  		the color of the rock
+string cameraID : 	the name of the camera where the rock was detected 
+
+imgDataArray.msg:
+imgData[] rockData :	array containing all the imgData's that have all the rock locations
 
 How to Run rock_publisher:
   1. Untar the file into a ROS workspace. It will create a package called rock_publisher.
@@ -29,3 +44,4 @@ To use the custom messages:
   3. Use these include statements:
     - #include <your_package_name::imgData.h>
     - #include <your_package_name::imgDataArray.h>
+
