@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     rockData.color.g = 0 ;
     rockData.color.b = 0 ;
     rockData.color.a = 0 ;
-    rockData.cameraID = "camera0" ;
+    rockData.cameraID = 0 ;
     rocksMsg.rockData.push_back(rockData) ;
 
     pub.publish(rocksMsg) ;
