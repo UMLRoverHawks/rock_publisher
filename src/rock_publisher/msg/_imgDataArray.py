@@ -7,7 +7,7 @@ import struct
 import rock_publisher.msg
 
 class imgDataArray(genpy.Message):
-  _md5sum = "32f266444187840836af15d5445ea6e5"
+  _md5sum = "203e50542367a4a58cac7ab553215738"
   _type = "rock_publisher/imgDataArray"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """imgData[] rockData
@@ -17,8 +17,15 @@ int32 x
 int32 y
 int32 width
 int32 height
-string color
-string cameraID
+colorRGBA color
+int32 cameraID
+
+================================================================================
+MSG: rock_publisher/colorRGBA
+float32 r
+float32 g
+float32 b
+float32 a
 """
   __slots__ = ['rockData']
   _slot_types = ['rock_publisher/imgData[]']
@@ -62,18 +69,10 @@ string cameraID
       for val1 in self.rockData:
         _x = val1
         buff.write(_struct_4i.pack(_x.x, _x.y, _x.width, _x.height))
-        _x = val1.color
-        length = len(_x)
-        if python3 or type(_x) == unicode:
-          _x = _x.encode('utf-8')
-          length = len(_x)
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-        _x = val1.cameraID
-        length = len(_x)
-        if python3 or type(_x) == unicode:
-          _x = _x.encode('utf-8')
-          length = len(_x)
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+        _v1 = val1.color
+        _x = _v1
+        buff.write(_struct_4f.pack(_x.r, _x.g, _x.b, _x.a))
+        buff.write(_struct_i.pack(val1.cameraID))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -96,24 +95,14 @@ string cameraID
         start = end
         end += 16
         (_x.x, _x.y, _x.width, _x.height,) = _struct_4i.unpack(str[start:end])
+        _v2 = val1.color
+        _x = _v2
+        start = end
+        end += 16
+        (_x.r, _x.g, _x.b, _x.a,) = _struct_4f.unpack(str[start:end])
         start = end
         end += 4
-        (length,) = _struct_I.unpack(str[start:end])
-        start = end
-        end += length
-        if python3:
-          val1.color = str[start:end].decode('utf-8')
-        else:
-          val1.color = str[start:end]
-        start = end
-        end += 4
-        (length,) = _struct_I.unpack(str[start:end])
-        start = end
-        end += length
-        if python3:
-          val1.cameraID = str[start:end].decode('utf-8')
-        else:
-          val1.cameraID = str[start:end]
+        (val1.cameraID,) = _struct_i.unpack(str[start:end])
         self.rockData.append(val1)
       return self
     except struct.error as e:
@@ -132,18 +121,10 @@ string cameraID
       for val1 in self.rockData:
         _x = val1
         buff.write(_struct_4i.pack(_x.x, _x.y, _x.width, _x.height))
-        _x = val1.color
-        length = len(_x)
-        if python3 or type(_x) == unicode:
-          _x = _x.encode('utf-8')
-          length = len(_x)
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-        _x = val1.cameraID
-        length = len(_x)
-        if python3 or type(_x) == unicode:
-          _x = _x.encode('utf-8')
-          length = len(_x)
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+        _v3 = val1.color
+        _x = _v3
+        buff.write(_struct_4f.pack(_x.r, _x.g, _x.b, _x.a))
+        buff.write(_struct_i.pack(val1.cameraID))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -167,28 +148,20 @@ string cameraID
         start = end
         end += 16
         (_x.x, _x.y, _x.width, _x.height,) = _struct_4i.unpack(str[start:end])
+        _v4 = val1.color
+        _x = _v4
+        start = end
+        end += 16
+        (_x.r, _x.g, _x.b, _x.a,) = _struct_4f.unpack(str[start:end])
         start = end
         end += 4
-        (length,) = _struct_I.unpack(str[start:end])
-        start = end
-        end += length
-        if python3:
-          val1.color = str[start:end].decode('utf-8')
-        else:
-          val1.color = str[start:end]
-        start = end
-        end += 4
-        (length,) = _struct_I.unpack(str[start:end])
-        start = end
-        end += length
-        if python3:
-          val1.cameraID = str[start:end].decode('utf-8')
-        else:
-          val1.cameraID = str[start:end]
+        (val1.cameraID,) = _struct_i.unpack(str[start:end])
         self.rockData.append(val1)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
+_struct_4f = struct.Struct("<4f")
+_struct_i = struct.Struct("<i")
 _struct_4i = struct.Struct("<4i")

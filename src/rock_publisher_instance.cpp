@@ -36,7 +36,7 @@ int main(int argc, char **argv)
       rockData.color.g = ( (count + 1) * std::rand()) % 255; 
       rockData.color.b = ( (count + 2) * std::rand()) % 255; 
       rockData.color.a = ( (count + 3) * std::rand()) % 255; 
-      rockData.cameraID = argv[1] ;
+      rockData.cameraID = count % 4;
       rocksMsg.rockData.push_back(rockData) ;
     }
     pub.publish(rocksMsg) ;
