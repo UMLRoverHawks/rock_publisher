@@ -20,6 +20,11 @@ imgDataArray.msg:
 
     imgData[] rockData :array containing all the imgData's that have all the rock locations
 
+recalibrateMsg.msg
+
+    imgData data : An imgData bounding box describing where the rock is located
+    sensor_msgs/CompressedImage : img image where the rock is located
+
 How to Run rock_publisher:
   1. Untar the file into a ROS workspace. It will create a package called rock_publisher.
 
@@ -38,6 +43,7 @@ To use the custom messages:
   3. Use these include statements:
     - #include '<'your_package_name::imgData.h'>'
     - #include '<'your_package_name::imgDataArray.h'>'
+    - #include '<'your_package_name::recalibrateMsg.h'>'
     
 
 
