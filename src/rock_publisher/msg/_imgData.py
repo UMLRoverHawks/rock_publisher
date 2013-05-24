@@ -23,6 +23,7 @@ float32 r
 float32 g
 float32 b
 float32 a
+
 """
   __slots__ = ['x','y','width','height','color','cameraID']
   _slot_types = ['int32','int32','int32','int32','rock_publisher/colorRGBA','int32']

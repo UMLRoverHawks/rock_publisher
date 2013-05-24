@@ -13,6 +13,7 @@ class colorRGBA(genpy.Message):
 float32 g
 float32 b
 float32 a
+
 """
   __slots__ = ['r','g','b','a']
   _slot_types = ['float32','float32','float32','float32']
